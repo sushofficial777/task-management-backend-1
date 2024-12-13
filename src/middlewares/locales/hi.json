@@ -1,0 +1,15 @@
+{
+	"Success": "Success",
+	"Please authenticate": "Please authenticate",
+	"Team not found": "Team not found",
+	"Match not found": "Match not found",
+	"Something went wrong, Please try again.": "Something went wrong, Please try again.",
+	"Validation Failed, Kindly check your parameters": "Validation Failed, Kindly check your parameters",
+	"Not found": "Not found",
+	"Your account already verified": "Your account already verified",
+	"Package not found": "Package not found",
+	"Invalid OTP": "Invalid OTP",
+	"Please verify your account first": "Please verify your account first",
+	"You don't have enough amount": "You don't have enough amount",
+	"Your account has been deleted by Admin": "Your account has been deleted by Admin"
+}
