@@ -53,7 +53,7 @@ app.use(compression());
 
 // enable cors
 
-app.use(cors({ origin: ["http://localhost:3000","http//:172.20.10.3:3000"], credentials: true }));
+app.use(cors({ origin: "https://rankfast-task-management.vercel.app", credentials: true }));
 
 // jwt authentication
 app.use(passport.initialize());
