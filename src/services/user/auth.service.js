@@ -27,13 +27,6 @@ exports.signup = async (data) => {
     );
   }
 
-  if (await User.findOne({ phone: data.phone }, { _id: 1 })) {
-    throw new OperationalError(
-      STATUS_CODES.ACTION_FAILED,
-      ERROR_MESSAGES.PHONE_NUMBER_ALREADY_EXIST
-    );
-  }
-
   const user = await User.create(data);
 
   console.log(data,"data");
@@ -42,6 +35,15 @@ exports.signup = async (data) => {
 
 exports.resetPassword = async (tokenData, newPassword) => {
   const user = await User.findOne({ _id: tokenData.user });
+  
+  // Check if new password matches current password
+  if (await user.isPasswordMatch(newPassword)) {
+    throw new OperationalError(
+      STATUS_CODES.ACTION_FAILED,
+      ERROR_MESSAGES.SAME_PASSWORD
+    );
+  }
+  
   user.password = newPassword;
   await user.save();
   await Token.findByIdAndUpdate(tokenData._id, { isDeleted: true });

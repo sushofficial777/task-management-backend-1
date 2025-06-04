@@ -10,9 +10,11 @@ const UserSchema = mongoose.Schema(
     },
     gender: { type: String, required: false },
     password: { type: String, required: true },
-    phone: { 
-      type: String,  
-      sparse: true  
+    profileImageUrl: { type: String, required: false },
+    role: {
+      type: String,
+      enum: ["user", "admin"], 
+      default: "user", 
     },
   },
   {timestamps: true,}

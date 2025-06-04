@@ -6,7 +6,7 @@ exports.signup = {
     name: Joi.string().required(),
     email: JOI.EMAIL,
     password: JOI.PASSWORD,
-    phone: JOI.PHONENUMBER,
+    profileImageUrl: Joi.string().allow(""),
     device_id: Joi.string().allow(""),
     device_type: Joi.string().valid(...Object.values(DEVICE_TYPE)),
     device_token: Joi.string().allow(""),

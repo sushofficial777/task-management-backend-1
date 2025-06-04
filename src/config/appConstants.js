@@ -57,6 +57,7 @@ exports.ERROR_MESSAGES = {
   UNAUTHORIZED: "You are not authorized to perform this action",
   ACCOUNT_NOT_EXIST: "Account does not exist",
   WRONG_PASSWORD: "Password is Incorrect",
+  SAME_PASSWORD: "New password cannot be the same as the current password",
   ACCOUNT_DELETED: "Your account has been deleted by Admin",
   ACCOUNT_BLOCKED: "Your account has been blocked by Admin",
   USER_NOT_FOUND: "User not found",
@@ -68,6 +69,8 @@ exports.ERROR_MESSAGES = {
   ACCOUNT_NOT_FOUND: "Account not found with this Email",
   USER_NAME_ALREADY_EXIST: "User name already exist",
   EMAIL_ALREADY_EXIST: "Email already exist",
+  DEMO_ALREADY_REQUESTED: "Demo already requested with this email or phone number",
+  DEMO_REQUEST_SUCCESS: "Booking Demo request sent successfully",
   ACCOUNT_ALREADY_EXIST: "Account already exist",
   TOKEN_EXPIRED: "Token expired",
   TOKEN_NOT_FOUND: "Token not found",
@@ -101,6 +104,57 @@ exports.STATUS_CODES = {
   BAD_GATEWAY: 502,
   SERVICE_UNAVAILABLE: 503,
   GATEWAY_TIMEOUT: 504,
+};
+
+exports.SCHEDULER_TYPES = {
+  TASK_JOB: "task",
+}
+
+exports.TASK_SCHEDULER_TYPES = {
+  TASK_REMINDER: "remind_task_notification",
+  TASK_CREATED: "task_created",
+  TASK_STARTED: "task_started",
+  TASK_COMPLETED: "task_completed",
+}
+
+exports.SCHEDULER_REGARDS = {
+  TASK_INITIALIZER: "remind_task_notification",
+  TASK_UPDATE: "task_update",
+}
+
+exports.NOTIFICATION_TYPES = {
+  // Task Status Updates
+  TASK_CREATED: "Task Created",
+  TASK_UPDATED: "Task Updated",
+  TASK_COMPLETED: "Task Completed",
+  TASK_DELETED: "Task Deleted",
+  TASK_REASSIGNED: "Task Reassigned",
+
+  // Task Stage Changes
+  STAGE_NOT_STARTED: "Not Started",
+  STAGE_IN_PROGRESS: "In Progress",
+  STAGE_COMPLETED: "Completed",
+
+  // Due Date Reminders
+  DUE_DATE_24H_REMINDER: "24 Hour Reminder",
+  DUE_DATE_1H_REMINDER: "1 Hour Reminder",
+  DUE_DATE: "Due Date",
+  DUE_DATE_PASSED: "Due Date Passed",
+
+  // Priority Changes
+  PRIORITY_CHANGED_HIGH: "Priority Changed High",
+  PRIORITY_CHANGED_MEDIUM: "Priority Changed Medium",
+  PRIORITY_CHANGED_LOW: "Priority Changed Low",
+
+  // Team and Assignee Updates
+  TEAM_ASSIGNED: "Team Assigned",
+  TEAM_REMOVED: "Team Removed",
+  ASSIGNEE_ADDED: "Assignee Added",
+  ASSIGNEE_REMOVED: "Assignee Removed",
+
+  // Task Comments
+  COMMENT_ADDED: "Comment Added",
+  COMMENT_MENTIONED: "Comment Mentioned"
 };
 
 exports.DATE_FORMAT = "YYYY-MM-DD";

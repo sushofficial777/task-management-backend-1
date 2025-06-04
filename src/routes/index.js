@@ -1,7 +1,8 @@
 const express = require("express");
 const userAuth = require("./user/auth.routes");
-
-const adminAuth = require("./admin/auth.routes");
+const userRoute = require("./user/user.route");
+const taskRoute = require("./task/task.route");
+const notificationRoute = require("./notification/notification.route");
 
 const staticRoutes = require("./static.routes");
 
@@ -13,13 +14,22 @@ const defaultRoutes = [
     route: userAuth,
   },
   {
-    path: "/admin/auth",
-    route: adminAuth,
+    path: "/user",
+    route: userRoute,
+  },
+  {
+    path: "/notification",
+    route: notificationRoute,
+  },
+  {
+    path: "/api/task",
+    route: taskRoute,
   },
   {
     path: "/",
     route: staticRoutes,
   },
+
 ];
 
 defaultRoutes.forEach((route) => {

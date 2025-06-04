@@ -28,5 +28,16 @@
 	"Account not found": "Account not found",
 	"Account not found with this email": "Account not found with this email",
 	"Account not found with this Email": "Account not found with this Email",
-	"confirmPassword is required": "confirmPassword is required"
+	"confirmPassword is required": "confirmPassword is required",
+	"mobile is not allowed": "mobile is not allowed",
+	"mobileNumber is not allowed": "mobileNumber is not allowed",
+	"Demo already requested with this email": "Demo already requested with this email",
+	"Demo already requested with this email or phone number": "Demo already requested with this email or phone number",
+	"New password cannot be the same as the current password": "New password cannot be the same as the current password",
+	"profileImageUrl is not allowed": "profileImageUrl is not allowed",
+	"assignee is not allowed": "assignee is not allowed",
+	"assignee must be a string": "assignee must be a string",
+	"stage must be one of [0, 1, 2]": "stage must be one of [0, 1, 2]",
+	"dueDate with value 2025-06-03T18": "30:00.000Z fails to match the required pattern: /^\\d{4}-\\d{2}-\\d{2}$/",
+	"id must be a string": "id must be a string"
 }

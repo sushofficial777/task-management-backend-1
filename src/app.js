@@ -5,6 +5,18 @@ const passport = require("passport");
 const compression = require("compression");
 const path = require("path");
 
+const {
+  generateMassageService,
+} = require("./services/ai/ai.message.service");
+
+const genContent = async (prompt) => {
+  const dataByAi = await generateMassageService(prompt);
+  console.log(dataByAi);
+  return dataByAi;
+};
+
+genContent("hello")
+
 const { jwtStrategy } = require("./config/passport");
 const routes = require("./routes");
 const { errorHandler } = require("./middlewares/common");
@@ -16,6 +28,8 @@ const {
 } = require("./middlewares/common");
 
 const app = express();
+
+require('./jobs/agenda');
 
 app.set("view engine", "hbs");
 app.set('views', path.join(__dirname, '../views'));
@@ -38,9 +52,8 @@ app.use(mongoSanitize());
 app.use(compression());
 
 // enable cors
-app.use(cors());
 
-app.options("*", cors());
+app.use(cors({ origin: ["http://localhost:3000","http//:172.20.10.3:3000"], credentials: true }));
 
 // jwt authentication
 app.use(passport.initialize());
